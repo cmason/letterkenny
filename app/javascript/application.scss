@@ -1,0 +1,38 @@
+@import "~bulma/bulma";
+
+body, html {
+  height: 100%;
+  margins: 0;
+  color: $white;
+}
+
+.bg {
+  background-image: url("images/letterkenny_bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  opacity: 0.95;
+  position: relative;
+
+}
+
+.quote {
+  font-size: xxx-large;
+  font-weight: bold;
+  height: 50%;
+}
+
+.author {
+  font-size: xx-large;
+  font-style: italic;
+  prefix: "--";
+}
+
+.author::before {
+  content: "\02014";
+}
+
+.button-container {
+  padding: .25em;
+}
