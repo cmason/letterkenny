@@ -23,6 +23,6 @@ class RandomQuotesTest < ApplicationSystemTestCase
     assert_selector "h2.author", text: "Katy"
 
     click_on "Have another?"
-     assert_equal current_path, "/random/katy"
+    assert_equal current_path, "/random/katy"
   end
 end
