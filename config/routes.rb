@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   get "random", to: "quotes#random", as: "random_quote"
   get "random/:slug", to: "quotes#random", as: "random_character_quote"
 
-  # resources :quotes
+  resources :quotes, only: :show
   # resources :characters
 end

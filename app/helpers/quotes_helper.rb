@@ -1,9 +1,6 @@
 module QuotesHelper
-  def another_quote_button
-    if slug_param.nil?
-      link_to "Have another?", random_quote_path, class: "button"
-    else
-      link_to "Have another?", random_character_quote_path(slug: slug_param), class: "button"
-    end
+  def open_graph_tags(quote)
+    content_for :og_url, quote_url(quote)
+    content_for :og_description, "#{quote.text} - #{quote.author}"
   end
 end

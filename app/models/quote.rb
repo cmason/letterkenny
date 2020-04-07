@@ -10,4 +10,8 @@ class Quote < ApplicationRecord
   def author
     character.name
   end
+
+  def author_slug
+    character.slug
+  end
 end
