@@ -10,6 +10,9 @@
 # Ignore local ENV variables
 .env
 
+# Ignore test coverage files
+/coverage
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
