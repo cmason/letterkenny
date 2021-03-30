@@ -46,7 +46,7 @@ wayne.quotes.create([
   {text: "Real men finish what they started."},
   {text: "It's a hard life pickin stones and pullin teets, but sure as gods got sandals, it sure beats fightin dudes with treasure trails."},
   {text: "Do you guys do CrossFit? You can CrossFuck off!"},
-  {text: "What’s up with your fuckin body hair big shoots? You look like a 12-year-old dutch girl."},
+  {text: "What’s up with your fuckin body hair big shoots? You look like a 12-year-old dutch girl."}
 ])
 
 daryl.quotes.create([
@@ -54,39 +54,39 @@ daryl.quotes.create([
   {text: "I see the muscle shirt came today. Muscles coming tomorrow? Did ya get a tracking number? Oh I hope he got a tracking number. That package is going to be smaller than the one you’re sportin’ now."},
   {text: "How're we going to fuck this pig?"},
   {text: "Your neighbor put a Corvette engine in a Ford Ranger. Like, what a fuckin' basic."},
-  {text: "Can't help gettin' a semi while bouncing around in a semi truck."},
+  {text: "Can't help gettin' a semi while bouncing around in a semi truck."}
 ])
 
 katy.quotes.create([
   {text: "Oh I’m stomping the brakes, put that idea right through the fucking windshield."},
   {text: "Is that what you appreciate about me?"},
   {text: "That was well brought up. Too bad you weren’t."},
-  {text: "Can confirm"},
+  {text: "Can confirm"}
 ])
 
 jonesy.quotes.create([
   {text: "Fuck, Lemony Snicket, what A Series of Unfortunate Events you been through, you ugly fuck."},
-  {text: "Fuck you Shorsey!"},
+  {text: "Fuck you Shorsey!"}
 ])
 
 reilly.quotes.create([
   {text: "Fuck you Shoresy! Put a shirt on."},
-  {text: "Oh, c’mon, where’s your jam, bud?"},
+  {text: "Oh, c’mon, where’s your jam, bud?"}
 ])
 
 dan.quotes.create([
   {text: "Out of the way I’m growing a tail!"},
-  {text: "Youse guys ever take the dirt road home?"},
+  {text: "Youse guys ever take the dirt road home?"}
 ])
 
 gail.quotes.create([
   {text: "Call me a cake, ‘cause I’ll go straight to your ass, cowboy!"},
   {text: "You wanna 68? That's when you go down on me... And I'll owe ya one"},
   {text: "How many planets are there? Only seven after I destroy Uranus"},
-  {text: "I was flicking more bean than a Starbucks barista!"},
+  {text: "I was flicking more bean than a Starbucks barista!"}
 ])
 
 stewart.quotes.create([
   {text: "Shirt tucker!"},
-  {text: "Wonderous!"},
+  {text: "Wonderous!"}
 ])
