@@ -9,7 +9,7 @@ class QuotesController < ApplicationController
   def random
     @quote = Quote.random character
     respond_to do |format|
-      format.html { redirect_to @quote }
+      format.html { redirect_to quote_path(@quote) }
       format.json { render :show, status: :ok, location: @quote }
     end
   end
