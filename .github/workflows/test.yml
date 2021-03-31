@@ -63,8 +63,9 @@ jobs:
           POSTGRES_USER: LetterKenny
           POSTGRES_DB: LetterKenny_test
           POSTGRES_PASSWORD: ""
-        ports: ["5432:5432"]
-
+        ports:
+        - 5432:5432
+         options: --health-cmd pg_isready --health-interval 10ms --health-timeout 500ms --health-retries 15
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
