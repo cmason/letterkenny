@@ -58,7 +58,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:11
+        image: postgres:11-alpine
         env:
           POSTGRES_USER: LetterKenny
           POSTGRES_DB: LetterKenny_test
@@ -74,6 +74,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          ruby-version: 2.7.2
 
       - name: Setup Node
         uses: actions/setup-node@v1
@@ -101,7 +102,7 @@ jobs:
           RAILS_ENV: test
           PGHOST: localhost
           PGUSER: LetterKenny
-          DATABASE_URL: postgres://LetterKenny:postgres@localhost/LetterKenny_test
+          DATABASE_URL: postgres://LetterKenny:postgres@postgres/LetterKenny_test
         run: |
           bin/rails db:setup
 
