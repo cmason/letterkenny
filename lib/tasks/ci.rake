@@ -12,7 +12,7 @@ end
 
 desc "Scans application for vulnerabilities"
 task :brakeman do
-  sh "bundle exec brakeman --no-pager"
+  sh "bundle exec brakeman -q --no-pager"
 end
 
 desc "Run static analysis code quality report"
