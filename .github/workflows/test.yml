@@ -60,9 +60,9 @@ jobs:
       postgres:
         image: postgres:11-alpine
         env:
-          POSTGRES_USER: LetterKenny
+          POSTGRES_USER: postgres
           POSTGRES_DB: LetterKenny_test
-          POSTGRES_PASSWORD: "postgres"
+          POSTGRES_PASSWORD: postgres
         ports:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 5s --health-timeout 3s --health-retries 10
@@ -101,10 +101,15 @@ jobs:
         env:
           RAILS_ENV: test
           PGHOST: localhost
-          PGUSER: LetterKenny
-          DATABASE_URL: postgres://LetterKenny:postgres@postgres/LetterKenny_test
+          PGUSER: postgres
+          PGPASSWORD: postgres
         run: |
           bin/rails db:setup
 
       - name: Run tests
+        env:
+          RAILS_ENV: test
+          PGHOST: localhost
+          PGUSER: postgres
+          PGPASSWORD: postgres
         run: bin/rails test:all
