@@ -44,14 +44,14 @@ jobs:
 
       - name: Run linters
         run: |
-          bundle exec rails standard
-          bundle exec rails rubycritic
+          bin/rails standard
+          bin/rails rubycritic
 
       - name: Run security checks
         run: |
-          bundle exec rails bundle:audit
-          bundle exec rails bundle:leak
-          bundle exec rails brakeman
+          bin/rails bundle:audit
+          bin/rails bundle:leak
+          bin/rails brakeman
 
   tests:
     name: Tests
@@ -67,7 +67,7 @@ jobs:
 
     steps:
       - name: Checkout code
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -104,4 +104,4 @@ jobs:
           bin/rails db:setup
 
       - name: Run tests
-        run: bundle exec rails test:all
+        run: bin/rails test:all
