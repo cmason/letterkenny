@@ -1,0 +1,16 @@
+<section class="bg">
+  <div class="container is-large">
+    <h1 class="title is-size-1 has-text-white">Quotes</h1>
+    <% @quotes.each do |quote| %>
+      <figure class="quote block">
+        <blockquote class="is-size-4">
+        <%= quote.text %>
+        </blockquote>
+        <figcaption class="is-size-5">
+          &mdash; <%= quote.author_name %>
+        </figcaption>
+      </figure>
+    <% end %>
+  </div>
+  <%== pagy_nav(@pagy) %>
+</section>

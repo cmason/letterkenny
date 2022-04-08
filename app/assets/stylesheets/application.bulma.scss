@@ -1,0 +1,107 @@
+// @charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// Set your brand colors
+// $purple: #8A4D76;
+// $pink: #FA7C91;
+// $brown: #757763;
+// $beige-light: #D0D1CD;
+// $beige-lighter: #EFF0EB;
+
+// Update Bulma's global variables
+// $family-sans-serif: "Nunito", sans-serif;
+// $grey-dark: $brown;
+// $grey-light: $beige-light;
+// $primary: $purple;
+// $link: $pink;
+// $widescreen-enabled: false;
+// $fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+// $body-background-color: $beige-lighter;
+// $control-border-width: 2px;
+// $input-border-color: transparent;
+// $input-shadow: none;
+
+$navbar-item-img-max-height: 2.5rem;
+$link: hsl(348, 86%, 61%);
+
+// Import only what you need from Bulma
+// @import "bulma/sass/utilities/_all.sass";
+// @import "bulma/sass/base/_all.sass";
+// @import "bulma/sass/elements/button.sass";
+// @import "bulma/sass/elements/container.sass";
+// @import "bulma/sass/elements/title.sass";
+// @import "bulma/sass/form/_all.sass";
+// @import "bulma/sass/components/navbar.sass";
+// @import "bulma/sass/layout/hero.sass";
+// @import "bulma/sass/layout/section.sass";
+
+@import 'bulma/bulma';
+
+body, html {
+  height: 100%;
+  margins: 0;
+  color: $white;
+}
+
+blockquote::before {
+  content: open-quote;
+}
+blockquote::after {
+  content: close-quote;
+}
+blockquote {
+  quotes: "“" "”" "‘" "’";
+}
+/* Fallback */
+blockquote {
+  text-indent: -0.45em;
+}
+
+/* If there's support, erase the indent and use the property instead */
+@supports ( hanging-punctuation: first) {
+  blockquote {
+    text-indent: 0;
+    hanging-punctuation: first;
+  }
+}
+
+.bg {
+  background-image: url("barn-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.95;
+  position: relative;
+
+}
+
+.quote {
+}
+
+.author {
+}
+
+.author::before {
+  content: "\02014";
+}
+
+.button-container {
+  padding: .25em;
+}
+
+.filter-grey-dark{
+  filter: invert(29%) sepia(23%) saturate(0%) hue-rotate(261deg) brightness(91%) contrast(93%);
+}
+
+.slack-sign-in{
+  background-color: $white;
+  border-radius: 0.25rem;
+  padding: .25rem;
+  border: none;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,17 @@
+<% open_graph_tags(@quote) %>
+<section class="hero is-fullheight is-gapless bg">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 id="<%= dom_id(@quote) %>" class="quote is-size-1 has-text-weight-bold">
+        <blockquote><%=@quote.text%></blockquote>
+      </h1>
+      <h2 class="author is-size-3 is-italic">
+       <%= @quote.author_name %>
+      </h2>
+      <div class="buttons is-centered button-container">
+        <%= link_to "Random Quote", quotes_random_path, class: "button  is-large" %>
+        <%= link_to "Random #{@quote.author_name} Quote", quotes_random_character_path(slug: @quote.author_slug), class: "button is-large" %>
+      </div>
+    </div>
+  </div>
+</section>
