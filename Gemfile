@@ -52,7 +52,6 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem "slack_sign_in", github: "cmason/slack_sign_in", branch: "production"
-gem "pagy"
 
 group :development, :test do
   gem "brakeman"
