@@ -1,7 +1,7 @@
 class Character < ApplicationRecord
   before_validation :slugify
 
-  has_many :quotes
+  has_many :quotes, dependent: :destroy
   validates :name, presence: true
   validates :slug, presence: true, uniqueness: {case_sensitive: false}
 

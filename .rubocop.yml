@@ -23,3 +23,6 @@ Minitest:
 
 Performance:
   Enabled: true
+
+Minitest/MultipleAssertions:
+  Max: 5

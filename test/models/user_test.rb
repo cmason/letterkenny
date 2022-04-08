@@ -6,7 +6,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "user should be valid" do
-    assert @user.valid?
+    assert_predicate @user, :valid?
   end
 
   test "should not save a user without a name" do

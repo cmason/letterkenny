@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  signed_in: "Signed in!"
+  signed_out: "Signed out!"
+

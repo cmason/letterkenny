@@ -11,24 +11,17 @@ class RandomQuotesTest < ApplicationSystemTestCase
   test "get random quote" do
     visit quotes_random_path
 
-    assert_rendered_quote
+    assert_quote_rendered
   end
 
   test "get random quote from a specific character" do
     visit quotes_random_character_path(slug: "katy")
 
     assert_selector "h2.author", text: "Katy"
-    assert_rendered_quote
+    assert_quote_rendered
 
     click_on "Random Katy Quote"
 
     assert has_link?("Random Katy Quote")
-  end
-
-  def assert_rendered_quote
-    assert_selector "h1.quote"
-    assert has_link?("Random Quote")
-    assert(has_link?("Random Wayne Quote") || has_link?("Random Katy Quote"), "Missing random character quote button")
-    assert_match(%r{/quotes/\d+}, current_path, "should redirect to quote_path")
   end
 end
