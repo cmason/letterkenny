@@ -45,7 +45,7 @@ jobs:
 
       - name: Run linters
         run: |
-          bin/rails standard
+          bin/rails rubocop
 
       - name: Run security checks
         run: |
