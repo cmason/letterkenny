@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Avo::Engine, at: Avo.configuration.root_path, constraints: lambda { |req| req.session[:user_id].present? }
+
   namespace :quotes do
     get "random", to: "random#index", as: "random"
     get "random/:slug", to: "random#show", as: "random_character"

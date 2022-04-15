@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2021_03_31_183216) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_14_213321) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2021_03_31_183216) do
     t.string "avatar_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "admin_at"
     t.index ["slack_unique_id"], name: "index_users_on_slack_unique_id", unique: true
   end
 

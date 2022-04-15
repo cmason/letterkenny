@@ -24,4 +24,27 @@ class CharacterTest < ActiveSupport::TestCase
       Character.create! name: katy.name, slug: katy.slug
     end
   end
+
+  class CharacterToParamTest < ActiveSupport::TestCase
+    def setup
+      @character = characters(:katy)
+    end
+
+    def teardown
+      Character.toggle_override_to_param(true)
+    end
+    test "to_param returns the slug if override_to_param_enabled?" do
+      Character.toggle_override_to_param(true)
+      assert_equal(@character.slug, @character.to_param)
+    end
+
+    test "to_param returns the id unless override_to_param_enabled?" do
+      Character.toggle_override_to_param(false)
+      assert_equal(@character.id.to_s, @character.to_param)
+    end
+
+    test "to_param returns nil if the character is not persisted" do
+      assert_nil(Character.new.to_param)
+    end
+  end
 end
