@@ -24,6 +24,14 @@
         </span>
         <span>About</span>
       <% end %>
+      <% if current_user %>
+        <%= link_to avo_url, class: "navbar-item" do %>
+          <span class="icon">
+            <i class="fas fa-toolbox"></i>
+          </span>
+          <span>Admin</span>
+        <% end %>
+      <% end %>
     </div>
     <div class="navbar-end is-active">
       <% if current_user %>
