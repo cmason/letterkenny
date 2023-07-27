@@ -13,9 +13,13 @@ Avo.configure do |config|
   end
 
   ## == Authentication ==
-  # config.current_user_method = {}
+  config.current_user_method { Current.user }
   config.authenticate_with do
-    redirect_to root_path if session[:user_id].blank?
+    if session[:user_id].present?
+      Current.user = User.find(session[:user_id])
+    else
+      redirect_to root_path, alert: t(:signed_out)
+    end
   end
 
   ## == Authorization ==

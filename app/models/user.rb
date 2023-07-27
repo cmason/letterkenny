@@ -4,6 +4,9 @@ class User < ApplicationRecord
   validates :slack_user_id, presence: true
   validates :slack_team_id, presence: true
 
+  scope :admins, -> { where.not(admin_at: nil) }
+  scope :not_admins, -> { where(admin_at: nil) }
+
   def admin
     admin_at.present?
   end
@@ -15,5 +18,23 @@ class User < ApplicationRecord
     else
       self.admin_at = nil
     end
+  end
+
+  def make_admin
+    self.admin = true
+  end
+
+  def revoke_admin
+    self.admin = false
+  end
+
+  def make_admin!
+    make_admin
+    save!
+  end
+
+  def revoke_admin!
+    revoke_admin
+    save!
   end
 end

@@ -46,5 +46,9 @@ class CharacterTest < ActiveSupport::TestCase
     test "to_param returns nil if the character is not persisted" do
       assert_nil(Character.new.to_param)
     end
+
+    test "override_to_param_enabled? is enabled by default" do
+      assert_predicate Character, :override_to_param_enabled?
+    end
   end
 end

@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :set_current_user, if: :user_signed_in?
   protect_from_forgery with: :exception
   helper_method :current_user
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
@@ -9,8 +10,16 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def user_signed_in?
+    session[:user_id].present?
+  end
+
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find(session[:user_id]) if user_signed_in?
+  end
+
+  def set_current_user
+    Current.user = current_user
   end
 
   def not_found

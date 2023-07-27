@@ -10,6 +10,9 @@ class UserResource < Avo::BaseResource
   field :name, as: :text, required: true, sortable: true
   field :slack_user_id, as: :text
   field :slack_team_id, as: :text
+  field :admin, as: :boolean, name: "Admin?" do |model| model.admin? end
   field :created_at, as: :date, readonly: true
   field :updated_at, as: :date, readonly: true
+
+  action ToggleAdmin
 end

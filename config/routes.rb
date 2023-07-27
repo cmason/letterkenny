@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount Avo::Engine, at: Avo.configuration.root_path, constraints: lambda { |req| req.session[:user_id].present? }
+  root "pages#root"
 
   namespace :quotes do
     get "random", to: "random#index", as: "random"
@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   get "sessions/create", to: "sessions#create", as: :create_session
   get "sessions/destroy", to: "sessions#destroy", as: :destroy_session
   get "pages/about"
-  root "pages#root"
+
+  mount Avo::Engine, at: Avo.configuration.root_path, constraints: lambda { |req| req.session[:user_id].present? }
 end

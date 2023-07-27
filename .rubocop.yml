@@ -5,7 +5,7 @@ require:
   - rubocop-performance
 
 inherit_gem:
-  standard: config/base.yml
+  standard: config/ruby-3.0.yml
 
 AllCops:
   NewCops: enable

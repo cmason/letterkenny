@@ -4,7 +4,6 @@ class RandomQuotesTest < ApplicationSystemTestCase
   test "visiting the root" do
     visit root_url
 
-    # assert_rendered_quote
     assert has_link?("Get a Quote")
   end
 
