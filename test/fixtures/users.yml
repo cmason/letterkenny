@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+slack:
+  name: Slack User
+  slack_unique_id: T12345-U54321
+  slack_user_id: U54321
+  slack_team_id: T12345
+  avatar_url: "https://www.example.com/avatar.png"
+
+admin:
+  name: Admin User
+  slack_unique_id: T12345-U11111
+  slack_user_id: U11111
+  slack_team_id: T12345
+  avatar_url: "https://www.example.com/avatar.png"
+  admin_at: <%= Time.current %>

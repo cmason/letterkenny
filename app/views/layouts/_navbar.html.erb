@@ -1,0 +1,49 @@
+<nav class="navbar is-light is-fixed-bottom">
+  <div class="navbar-brand">
+    <%= link_to root_url, class: "navbar-item", title: "Home" do %>
+      <%= image_tag "logo2.svg", width: 37, height: 40, alt: "Letterkenny dog logo", class: "filter-grey-dark" %>
+    <% end %>
+    <div class="navbar-burger burger" data-target="main-nav">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </div>
+  </div>
+
+  <div id="main-nav" class="navbar-menu">
+    <div class="navbar-start">
+      <div class="navbar-item">
+        Letterkenny consists of hicks, skids, hockey players, and Christians. These are their quotes.
+      </div>
+    </div>
+    <div class="navbar-end is-active">
+      <% if current_user %>
+        <div class="navbar-item has-dropdown has-dropdown-up is-hoverable">
+          <div class="navbar-link">
+          <span>
+            <%= avatar(current_user) %>
+            </span>
+            <span><%= current_user.name %><span>
+          </div>
+
+          <div class="navbar-dropdown">
+            <%= link_to root_path, title: "Admin", class: "navbar-item" do %>
+              <span class="icon">
+                <i class="fas fa-screwdriver-wrench"></i>
+              </span>
+              <span>Admin</span>
+            <% end %>
+            <%= link_to destroy_session_path, title: "Sign out", class: "navbar-item" do %>
+              <span class="icon">
+                <i class="fas fa-sign-out-alt"></i>
+              </span>
+              <span>Sign Out</span>
+            <% end %>
+          </div>
+        </div>
+      <% else %>
+         <%= slack_sign_in_link proceed_to: create_session_url, class: "navbar-item slack-sign-in", data: {turbo: false} %>
+      <% end %>
+    </div>
+  </div>
+</nav>

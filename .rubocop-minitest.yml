@@ -1,0 +1,7 @@
+require:
+  - rubocop-minitest
+
+Minitest:
+  Enabled: true
+# Minitest/MultipleAssertions:
+#   Max: 5
