@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: characters
+#
+#  id         :integer          not null, primary key
+#  name       :string           not null
+#  slug       :text             not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+# Indexes
+#
+#  index_characters_on_slug  (slug) UNIQUE
+#
 require "test_helper"
 
 class CharacterTest < ActiveSupport::TestCase
