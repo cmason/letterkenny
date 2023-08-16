@@ -2,20 +2,22 @@ require "test_helper"
 require "slack_sign_in/minitest"
 
 class SessionsControllerTest < ActionDispatch::IntegrationTest
+  include AbstractController::Translation
+
   def setup
     @user = users(:slack)
   end
 
   test "should login user from slack" do
     get create_session_url, env: slack_successful_authentication(@user)
-    assert_equal "Signed in!", flash[:notice]
+    assert_equal t(:signed_in, name: @user.name), flash[:notice]
     assert_equal @user.id, session[:user_id]
     assert_redirected_to root_path
   end
 
   test "should alert user if unable to authenticate with slack" do
     get create_session_url, env: slack_failed_authentication
-    assert_equal "invalid_scope_requested", flash[:alert]
+    assert_equal t(:invalid_scope_requested), flash[:alert]
     assert_nil session[:user_id]
     assert_redirected_to root_path
   end
@@ -23,7 +25,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   test "should be able to log out" do
     get destroy_session_url
     assert_nil session[:user_id]
-    assert_equal "Signed out!", flash[:notice]
+    assert_equal t(:signed_out), flash[:notice]
     assert_redirected_to root_path
   end
 
@@ -31,7 +33,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_difference("User.count") do
       get create_session_url, env: slack_successful_authentication(new_user)
     end
-    assert_equal "Signed in!", flash[:notice]
+    assert_equal t(:signed_in, name: new_user.name), flash[:notice]
     assert_not_nil session[:user_id]
     assert_redirected_to root_path
   end

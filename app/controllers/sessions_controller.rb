@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
     if slack_authorization.successful?
       user = find_or_create_user(slack_authorization.identity)
       create_session_for_user(user)
-      flash[:notice] = t(:signed_in)
+      flash[:notice] = t(:signed_in, name: user.name)
     else
       logger.error "Slack authorization failed: #{slack_authorization.inspect}"
-      flash[:alert] = slack_authorization.error
+      flash[:alert] = t(slack_authorization.error)
     end
     redirect_to root_path
   end

@@ -31,5 +31,6 @@
 
 en:
   hello: "Hello world"
-  signed_in: "Signed in!"
-  signed_out: "Signed out!"
+  signed_in: "How are ya now %{name}!"
+  signed_out: "We hate to see you pull a Letterkenny Leave"
+  invalid_scope_requested: "Permission to access Slack denied. Unable to authenticate."

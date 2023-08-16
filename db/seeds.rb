@@ -62,40 +62,50 @@ katy.quotes.create([
   {text: "Oh I’m stomping the brakes, put that idea right through the fucking windshield."},
   {text: "Is that what you appreciate about me?"},
   {text: "That was well brought up. Too bad you weren’t."},
-  {text: "Can confirm"}
+  {text: "Can confirm"},
+  {text: "Not my forte."},
+  {text: "On a scale from one to America, how free are you right now?"},
+  {text: "If you smelly gamey, you ain’t gonna lay me."}
+
 ])
 
 jonesy.quotes.create([
   {text: "Fuck, Lemony Snicket, what A Series of Unfortunate Events you been through, you ugly fuck."},
-  {text: "Fuck you Shorsey!"}
+  {text: "Fuck you Shorsey!"},
+  {text: "Bring on the gains, boys."}
 ])
 
 reilly.quotes.create([
   {text: "Fuck you Shoresy! Put a shirt on."},
-  {text: "Oh, c’mon, where’s your jam, bud?"}
+  {text: "Oh, c’mon, where’s your jam, bud?"},
+  {text: "I mean, just because my name is Reilly doesn’t necessarily mean that I’m a drunken leprechaun."},
+  {text: "Nice onesie! Does it come in men's?"}
 ])
 
 dan.quotes.create([
   {text: "Out of the way I’m growing a tail!"},
   {text: "Youse guys ever take the dirt road home?"},
-  {text: "That's what I appreciates about you."}
+  {text: "That's what I appreciates about you."},
+  {text: "I'm so upset about my perennials."}
 ])
 
 gail.quotes.create([
   {text: "Call me a cake, ‘cause I’ll go straight to your ass, cowboy!"},
   {text: "You wanna 68? That's when you go down on me... And I'll owe ya one"},
   {text: "How many planets are there? Only seven after I destroy Uranus"},
-  {text: "I was flicking more bean than a Starbucks barista!"}
+  {text: "I was flicking more bean than a Starbucks barista!"},
+  {text: "Something about that old goat just really grinds my pepper."}
 ])
 
 stewart.quotes.create([
   {text: "Shirt tucker!"},
-  {text: "Wonderous!"}
+  {text: "Wonderous!"},
+  {text: "One does not simply hop on or off the Anabolia Express. No. You ride that juice train all the way to the end of the line."}
 ])
 
 glen.quotes.create([
   {text: "I can't remember the last time five men came in this church so aggressively….or can I?"},
-  {text: "Two dycks at once? My cup runneth over!"},
+  {text: "Two Dycks at once? My cup runneth over!"},
   {text: "I wanna be close to Christ... and Wayne"},
   {text: "Who will touch me first? Is it Christ... or Wayne"},
   {text: "That is private, not true, and also a good idea!"}

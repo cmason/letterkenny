@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import MainController from "./main_controller"
 application.register("main", MainController)
+
+import RemovalsController from "./removals_controller"
+application.register("removals", RemovalsController)
