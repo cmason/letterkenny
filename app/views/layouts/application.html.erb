@@ -16,8 +16,12 @@
   </head>
 
   <body data-controller="main" class="has-navbar-fixed-bottom">
-    <%= render "layouts/flash" %>
     <%= yield %>
+    <div class="container">
+      <div id="flash" class="flash">
+        <%= render "layouts/flash" %>
+      </div>
+    </div>
     <%= render partial: "layouts/navbar" %>
   </body>
 </html>
