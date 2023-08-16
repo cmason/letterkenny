@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  admin_at        :datetime
+#  avatar_url      :string
+#  datetime        :datetime
+#  name            :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  slack_team_id   :string           not null
+#  slack_unique_id :string           not null
+#  slack_user_id   :string           not null
+#
+# Indexes
+#
+#  index_users_on_admin_at         (admin_at)
+#  index_users_on_slack_unique_id  (slack_unique_id) UNIQUE
+#
 class User < ApplicationRecord
   validates :name, presence: true
   validates :slack_unique_id, presence: true, uniqueness: true

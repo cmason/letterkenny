@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: quotes
+#
+#  id           :integer          not null, primary key
+#  text         :text             not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  character_id :integer          not null
+#
+# Indexes
+#
+#  index_quotes_on_character_id  (character_id)
+#
+# Foreign Keys
+#
+#  character_id  (character_id => characters.id) ON DELETE => cascade
+#
 require "test_helper"
 
 class QuoteTest < ActiveSupport::TestCase
