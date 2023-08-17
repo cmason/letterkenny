@@ -27,18 +27,12 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bin/rails test:all
-      - name: Run Rubycritic
-        run: bin/rails rubycritic
-      - name: Code Coverage Artifact
-        uses: actions/upload-artifact@v2
+      - name: Publish code coverage
+        uses: paambaati/codeclimate-action@v5.0.0
+        env:
+          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         with:
-          name: code-coverage
-          path: coverage/
-      - name: Rubycritic Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Rubycritic
-          path: tmp/rubycritic/
+          coverageLocations: ${{github.workspace}}/coverage/.resultset.json:simplecov
 
 
   lint:
