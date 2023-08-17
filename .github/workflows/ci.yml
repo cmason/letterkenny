@@ -25,15 +25,12 @@ jobs:
       - name: Set up database schema
         run: bin/rails db:prepare
       # Add or replace test runners here
-      - name: Run tests
-        run: bin/rails test:all
-        env:
-          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
-      - name: Publish code coverage
+      - name: Run test suite & publish results
         uses: paambaati/codeclimate-action@v5.0.0
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         with:
+          coverageCommand: bin/rails test:all
           coverageLocations: ${{github.workspace}}/coverage/coverage.json:simplecov
   lint:
     runs-on: ubuntu-latest
@@ -46,13 +43,13 @@ jobs:
           bundler-cache: true
           ruby-version: 3.2.2
       # Add or replace any other lints here
-      - name: Security audit dependencies
+      - name: Run Bundler-Audit - Security audit dependencies
         run: bin/rails bundle:audit
-      - name: Security audit application code
+      - name: Run Brakeman - Security audit application code
         run: bin/rails brakeman
-      - name: Memory leak audit dependencies
+      - name: Run Bundler-Leak - Check for memory leaks in dependencies
         run: bin/rails bundle:leak
-      - name: Lint Ruby files
+      - name: Run Standard - Lint Ruby files
         run: bin/rails standard
-      - name: Run Rubycritic
+      - name: Run Rubycritic - Static analysis
         run: bin/rails rubycritic
