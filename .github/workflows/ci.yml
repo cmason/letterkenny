@@ -35,8 +35,6 @@ jobs:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         with:
           coverageLocations: ${{github.workspace}}/coverage/coverage.json:simplecov
-
-
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -56,3 +54,5 @@ jobs:
         run: bin/rails bundle:leak
       - name: Lint Ruby files
         run: bin/rails standard
+      - name: Run Rubycritic
+        run: bin/rails rubycritic
