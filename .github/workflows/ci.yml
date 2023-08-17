@@ -27,12 +27,14 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bin/rails test:all
+        env:
+          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
       - name: Publish code coverage
         uses: paambaati/codeclimate-action@v5.0.0
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         with:
-          coverageLocations: ${{github.workspace}}/coverage/.resultset.json:simplecov
+          coverageLocations: ${{github.workspace}}/coverage/coverage.json:simplecov
 
 
   lint:
