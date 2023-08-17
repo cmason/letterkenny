@@ -1,4 +1,5 @@
 minimum_score: 90
+no_browser: true
 paths:
   - "app/"
   - "lib/"
