@@ -1,4 +1,8 @@
-minimum_score: 9
+minimum_score: 90
+no_browser: true
+formats:
+  - console
+  - html
 paths:
   - "app/"
   - "lib/"

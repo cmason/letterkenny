@@ -1,0 +1,55 @@
+# This workflow uses actions that are not certified by GitHub.  They are
+# provided by a third-party and are governed by separate terms of service,
+# privacy policy, and support documentation.
+#
+# This workflow will install a prebuilt Ruby version, install dependencies, and
+# run tests and linters.
+name: "Continuous Integration"
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      # Add or replace dependency steps here
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
+        with:
+          bundler-cache: true
+          ruby-version: 3.2.2
+      # Add or replace database setup steps here
+      - name: Set up database schema
+        run: bin/rails db:prepare
+      # Add or replace test runners here
+      - name: Run test suite & publish results
+        uses: paambaati/codeclimate-action@v5.0.0
+        env:
+          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+        with:
+          coverageCommand: bin/rails test:all
+          coverageLocations: ${{github.workspace}}/coverage/coverage.json:simplecov
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
+        with:
+          bundler-cache: true
+          ruby-version: 3.2.2
+      # Add or replace any other lints here
+      - name: Run Bundler-Audit - Security audit dependencies
+        run: bin/rails bundle:audit
+      - name: Run Brakeman - Security audit application code
+        run: bin/rails brakeman
+      - name: Run Bundler-Leak - Check for memory leaks in dependencies
+        run: bin/rails bundle:leak
+      - name: Run Standard - Lint Ruby files
+        run: bin/rails standard
+      - name: Run Rubycritic - Static analysis
+        run: bin/rails rubycritic
