@@ -46,7 +46,8 @@ wayne.quotes.create([
   {text: "Real men finish what they started."},
   {text: "It's a hard life pickin stones and pullin teets, but sure as gods got sandals, it sure beats fightin dudes with treasure trails."},
   {text: "Do you guys do CrossFit? You can CrossFuck off!"},
-  {text: "What’s up with your fuckin body hair big shoots? You look like a 12-year-old dutch girl."}
+  {text: "What’s up with your fuckin body hair big shoots? You look like a 12-year-old dutch girl."},
+  {text: "It sure is nice to be back in the comfort zone."}
 ])
 
 daryl.quotes.create([
@@ -55,7 +56,8 @@ daryl.quotes.create([
   {text: "How're we going to fuck this pig?"},
   {text: "Your neighbor put a Corvette engine in a Ford Ranger. Like, what a fuckin' basic."},
   {text: "Closest you’re gettin’ to any action this weekend is givin’ the dairy cow’s teets a good scrubbin’."},
-  {text: "Can't help gettin' a semi while bouncing around in a semi truck."}
+  {text: "Can't help gettin' a semi while bouncing around in a semi truck."},
+  {text: "Oh, bother."}
 ])
 
 katy.quotes.create([
@@ -86,7 +88,8 @@ dan.quotes.create([
   {text: "Out of the way I’m growing a tail!"},
   {text: "Youse guys ever take the dirt road home?"},
   {text: "That's what I appreciates about you."},
-  {text: "I'm so upset about my perennials."}
+  {text: "I'm so upset about my perennials."},
+  {text: "You are obliged to partakes in some socials stimulations from times to time, lest the young lady becomes rastless."}
 ])
 
 gail.quotes.create([
@@ -94,13 +97,15 @@ gail.quotes.create([
   {text: "You wanna 68? That's when you go down on me... And I'll owe ya one"},
   {text: "How many planets are there? Only seven after I destroy Uranus"},
   {text: "I was flicking more bean than a Starbucks barista!"},
-  {text: "Something about that old goat just really grinds my pepper."}
+  {text: "Something about that old goat just really grinds my pepper."},
+  {text: "No tushy play unless I ask for it - and I will ask for it."}
 ])
 
 stewart.quotes.create([
   {text: "Shirt tucker!"},
   {text: "Wonderous!"},
-  {text: "One does not simply hop on or off the Anabolia Express. No. You ride that juice train all the way to the end of the line."}
+  {text: "One does not simply hop on or off the Anabolia Express. No. You ride that juice train all the way to the end of the line."},
+  {text: "Ah, sweet hubris."}
 ])
 
 glen.quotes.create([
