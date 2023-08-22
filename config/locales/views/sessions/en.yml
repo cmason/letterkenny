@@ -1,0 +1,6 @@
+en:
+  sessions:
+    create:
+      success: "How are ya now %{name}!"
+    destroy:
+      success: "Maybe this calls for a Letterkenny Leave"

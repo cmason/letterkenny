@@ -1,6 +1,6 @@
 <meta property="og:type" content="website" />
-<meta property="og:url" content="<%= content_for?(:og_url) ? yield(:og_url) : root_url %>" />
-<meta property="og:title" content="Letterkenny Quotes" />
-<meta property="og:description" content="<%= content_for?(:og_description) ? yield(:og_description) : "Random Letterkenny Quotes" %>" />
+<meta property="og:url" content="<%= og_url %>" />
+<meta property="og:title" content="<%=t("letterkenny")%>" />
+<meta property="og:description" content="<%= og_description %>" />
 <meta property="og:image" content="<%= image_url "letterkenny_logo.jpg" %>" />
-<meta name="description" content="<%= content_for?(:og_description) ? yield(:og_description) : "Random Letterkenny Quotes" %>" />
+<meta name="description" content="<%= og_description %>" />

@@ -10,7 +10,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should login user from slack" do
     get create_session_url, env: slack_successful_authentication(@user)
-    assert_equal t(:signed_in, name: @user.name), flash[:notice]
+    assert_equal t("sessions.create.success", name: @user.name), flash[:notice]
     assert_equal @user.id, session[:user_id]
     assert_redirected_to root_path
   end
@@ -25,7 +25,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   test "should be able to log out" do
     get destroy_session_url
     assert_nil session[:user_id]
-    assert_equal t(:signed_out), flash[:notice]
+    assert_equal t("sessions.destroy.success"), flash[:notice]
     assert_redirected_to root_path
   end
 
@@ -33,7 +33,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_difference("User.count") do
       get create_session_url, env: slack_successful_authentication(new_user)
     end
-    assert_equal t(:signed_in, name: new_user.name), flash[:notice]
+    assert_equal t("sessions.create.success", name: new_user.name), flash[:notice]
     assert_not_nil session[:user_id]
     assert_redirected_to root_path
   end
