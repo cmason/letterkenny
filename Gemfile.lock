@@ -111,6 +111,9 @@ GEM
     crass (1.0.6)
     cssbundling-rails (1.2.0)
       railties (>= 6.0.0)
+    cuprite (0.14.3)
+      capybara (~> 3.0)
+      ferrum (~> 0.13.0)
     date (3.3.3)
     debug (1.8.0)
       irb (>= 1.5.0)
@@ -123,6 +126,11 @@ GEM
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
+    ferrum (0.13)
+      addressable (~> 2.5)
+      concurrent-ruby (~> 1.1)
+      webrick (~> 1.7)
+      websocket-driver (>= 0.6, < 0.8)
     flay (2.13.1)
       erubi (~> 1.10)
       path_expander (~> 1.0)
@@ -295,11 +303,6 @@ GEM
       simplecov (>= 0.22.0)
       tty-which (~> 0.5.0)
       virtus (~> 2.0)
-    rubyzip (2.3.2)
-    selenium-webdriver (4.11.0)
-      rexml (~> 3.2, >= 3.2.5)
-      rubyzip (>= 1.2.2, < 3.0)
-      websocket (~> 1.0)
     sexp_processor (4.17.0)
     simplecov (0.22.0)
       docile (~> 1.1)
@@ -359,7 +362,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    websocket (1.2.9)
+    webrick (1.8.1)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -379,6 +382,7 @@ DEPENDENCIES
   bundler-leak
   capybara
   cssbundling-rails
+  cuprite
   debug
   jbuilder
   jsbundling-rails
@@ -388,7 +392,6 @@ DEPENDENCIES
   rails (~> 7.0.6)
   rubocop-minitest
   rubycritic
-  selenium-webdriver (~> 4.11)
   simplecov
   slack_sign_in!
   sprockets-rails
