@@ -1,0 +1,5 @@
+en:
+  layouts:
+    navbar:
+      admin: "Admin"
+      signout: "Sign Out"

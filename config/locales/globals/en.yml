@@ -1,0 +1,5 @@
+en:
+  letterkenny: "LetterKenny Quotes"
+  tagline: "Letterkenny consists of hicks, skids, hockey players, and Christians. These are their quotes."
+  description: "Random Letterkenny Quotes"
+  invalid_scope_requested: "Permission to access Slack denied. Unable to authenticate."
