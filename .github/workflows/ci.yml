@@ -6,8 +6,6 @@
 # run tests and linters.
 name: "Continuous Integration"
 on:
-  schedule:
-    - cron: "*/10 * * * *"
   push:
   pull_request:
   
